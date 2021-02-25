@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{survey.title}}{% endblock %}
+{% block header %}<h1 class="display-1 text-center header">{{survey.title}}</h1>{% endblock%}
+{% block content %}
+<div class="col-6 mx-auto">
+    <form action="/answer" method="POST" class="col-6 mx-auto">
+        <label for='{{q_num}}' class="text-center d-block display-5">{{question.question}}</label>
+            {% if question.allow_text %}
+            <input type="text" name='{{q_num}}' placeholder="Answer Here" class="" required>
+            {% else %}
+            {% for choice in question.choices %}
+            <div class="form-check col-3 mx-auto">
+                <label class="form-check-label mx-auto" for='{{q_num}}'> {{choice}} </label>
+                    <input class="form-check-input mx-auto" type="radio" name='{{q_num}}' value={{choice}} required>
+            </div>
+            {% endfor %}
+            {% endif %}
+        <button class="btn btn-lg btn-outline-dark d-block mx-auto mt-4" type="submit">Go</button>
+    </form>
+</div>
+{% endblock %}
