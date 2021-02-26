@@ -1,1 +1,17 @@
-pip freeze
+backcall==0.2.0
+colorama==0.4.4
+decorator==4.4.2
+ipython==7.20.0
+ipython-genutils==0.2.0
+jedi==0.18.0
+neuralart==1.0.2
+numpy==1.20.1
+parso==0.8.1
+pickleshare==0.7.5
+Pillow==8.1.0
+prompt-toolkit==3.0.16
+Pygments==2.7.4
+torch==1.7.1
+traitlets==5.0.5
+typing-extensions==3.7.4.3
+wcwidth==0.2.5
