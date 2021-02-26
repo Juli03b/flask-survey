@@ -22,7 +22,6 @@ class Survey:
         self.instructions = instructions
         self.questions = questions
 
-
 satisfaction_survey = Survey(
     "Customer Satisfaction Survey",
     "Please fill out a survey about your experience with us.",

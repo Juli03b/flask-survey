@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Create Survey{% endblock %}
+{% block header %}Create a Survey{% endblock%}
+{% block content %}
+<div class="mt-4">
+    <div class="bg-dark w-50 mx-auto">
+        <p class="lead text-center mt-2 text-light"></p>
+    </div>
+    <form action="/submit-survey" method="POST" class="col-3 mx-auto" id="submit-survey">
+        <label for="title">Survey Title:</label>
+            <input type="text" name="title" placeholder="Survey Title" class="form-control my-2" required>
+        <label for="title">Survey Instructions:</label>
+            <input type="text" name="instructions" placeholder="Write Instructions" class="form-control my-2" required>
+        <label for="title">Survey Questions:</label>
+            <div id="question-inputs">
+            <input type="text" name="question" placeholder="Write Question" class="form-control my-2" required>
+            </div>
+            <input type="button" id="add-question-input" value="Add more questions" class="form-control btn btn-sm btn-outline-dark my-2">
+        <button class="btn btn-outline-dark form-control">Submit Survey!</button>
+    </form>
+</div>
+{% endblock %}

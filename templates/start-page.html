@@ -6,8 +6,18 @@
     <div class="bg-dark w-50 mx-auto">
         <p class="lead text-center mt-2 text-light"> {{survey.instructions}} </p>
     </div>
-    <form action="/question/0">
-        <button class="btn btn-lg btn-outline-dark d-block mx-auto mt-4" type="submit">Go</button>
+    <p class="text-center lead">Pick one of these surveys:</p>
+    <form action="/start" method="POST">
+        <select name="survey" class="capitalize mx-auto d-block">
+            {% for survey in surveys.keys() %}
+            <option value={{survey}} class="capitalize">{{survey}}</option>
+            {% endfor%} 
+        </select>
+        <button class="btn btn-md btn-outline-dark lead d-block mx-auto mt-4" type="submit">Go</button>
+    </form>
+    <p class="text-center lead my-5">Or create a new survey:</p>
+    <form action="/create-survey">
+        <button class="btn btn-sm btn-outline-dark lead d-block mx-auto mt-4" type="submit">Crate a new survey!</button>
     </form>
 </div>
 {% endblock %}

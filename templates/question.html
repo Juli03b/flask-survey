@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block title %}{{survey.title}}{% endblock %}
-{% block header %}<h1 class="display-1 text-center header">{{survey.title}}</h1>{% endblock%}
+{% block header %}{{survey.title}}{% endblock%}
 {% block content %}
 <div class="col-6 mx-auto">
     <form action="/answer" method="POST" class="col-6 mx-auto">
-        <label for='{{q_num}}' class="text-center d-block display-5">{{question.question}}</label>
+        <label for='{{q_num}}' class="text-center d-block fs-2 lead my-4">{{question.question}}</label>
             {% if question.allow_text %}
-            <input type="text" name='{{q_num}}' placeholder="Answer Here" class="" required>
+            <input type="text" name='{{q_num}}' placeholder="Answer Here" class="d-block text-center mx-auto" required>
             {% else %}
             {% for choice in question.choices %}
             <div class="form-check col-3 mx-auto">
